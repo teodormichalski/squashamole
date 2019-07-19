@@ -38,8 +38,8 @@ public class HairSegment : MonoBehaviour
 		GameObject newSegment = Instantiate (hairSegmentPrefab, new Vector3(this.transform.position.x, this.transform.position.y + 0.14f, this.transform.position.z), Quaternion.identity);
 		newSegment.GetComponent<HairSegment> ().id = id + 1;
 		newSegment.transform.parent = transform.parent;
-		//newSegment.GetComponent<DistanceJoint2D> ().connectBody = gameObject.GetComponent<Rigidbody2D> ();
-		//newSegment.GetComponent<FrictionJoint2D> ().connectBody = gameObject.GetComponent<Rigidbody2D> ();
+		newSegment.GetComponent<DistanceJoint2D> ().connectedBody = gameObject.GetComponent<Rigidbody2D> ();
+		newSegment.GetComponent<FrictionJoint2D> ().connectedBody = gameObject.GetComponent<Rigidbody2D> ();
 		hairBulb.RegisterNewChild (newSegment.transform);
 	}
 }

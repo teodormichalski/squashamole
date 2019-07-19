@@ -62,6 +62,7 @@ public class Hair : MonoBehaviour {
 	public void RegisterNewChild(Transform child) {
 		length++;
 		children.Add (child);
+		RegisterNewEnding (child.gameObject);
 	}
 
 	public void RegisterNewEnding(GameObject child) {
