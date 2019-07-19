@@ -8,6 +8,7 @@ public class HairSpriteRenderer : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	private Transform[] children;
 	private Vector3[] vertices;
+	private int length;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class HairSpriteRenderer : MonoBehaviour {
 			last = child.GetComponent<Rigidbody2D> ();
 		}
 		vertices = children.Select (i => i.position).ToArray();
+		length = children.Length;
 		lineRenderer.positionCount = vertices.Length;
 		lineRenderer.SetPositions (vertices);
 	}
@@ -34,5 +36,9 @@ public class HairSpriteRenderer : MonoBehaviour {
 		vertices = children.Select (i => i.position).ToArray ();
 		lineRenderer.positionCount = vertices.Length;
 		lineRenderer.SetPositions (vertices);
+	}
+
+	void Cut(int id) {
+		length = id - 1;
 	}
 }
