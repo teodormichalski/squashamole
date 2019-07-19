@@ -35,7 +35,7 @@ public class HairSegment : MonoBehaviour
 	}
 
 	public void Grow(GameObject hairSegmentPrefab) {
-		GameObject newSegment = Instantiate (hairSegmentPrefab, new Vector3(this.transform.position.x, this.transform.position.y + 0.14f, this.transform.position.z), Quaternion.identity);
+		GameObject newSegment = Instantiate (hairSegmentPrefab, new Vector3(this.transform.position.x, this.transform.position.y - 0.14f, this.transform.position.z), Quaternion.identity);
 		newSegment.GetComponent<HairSegment> ().id = id + 1;
 		newSegment.transform.parent = transform.parent;
 		newSegment.GetComponent<DistanceJoint2D> ().connectedBody = gameObject.GetComponent<Rigidbody2D> ();
