@@ -27,11 +27,11 @@ public class Hair : MonoBehaviour {
 			head = GameObject.Find ("Head");
 		if ((firstSegment == null) && (gameObject.transform.childCount > 0))
 			firstSegment = gameObject.transform.GetChild (0).gameObject;
+		growCounter = 0;
+		if (growThreeshold <= 0) growThreeshold = Random.Range (minThreeshold, maxThreeshold);
 		lineRenderer = this.GetComponent<LineRenderer> ();
 		children = transform.Cast<Transform> ().ToList();
 		vertices = children.Select (i => i.position).ToArray();
-		growCounter = 0;
-		if (growThreeshold <= 0) growThreeshold = Random.Range (minThreeshold, maxThreeshold);
 		length = children.Count ();
 		lineRenderer.positionCount = vertices.Length;
 		lineRenderer.SetPositions (vertices);
@@ -52,7 +52,7 @@ public class Hair : MonoBehaviour {
 		}
 		if ((growCounter >= growThreeshold) && (length > 1) && (alive)) {
 			growCounter = 0;
-			Grow ();
+			//Grow ();
 		}
 	}
 
@@ -63,14 +63,23 @@ public class Hair : MonoBehaviour {
 	}
 
 	public void Cut(int id) {
-		length = id - 1;
-		GameObject bulb = Instantiate (hairBulbPrefab, new Vector3 (0, 0, 0), Quaternion.identity);
-		foreach (Transform child in children) {
-			child.gameObject.GetComponent<HairSegment>().Cut (id, bulb);
-		}
-		children = children.Where (i => i.gameObject.GetComponent<HairSegment> ().id < id).ToList();
-		if (bulb.transform.childCount > 0) {
-			Destroy (bulb.transform.GetChild (0).gameObject.GetComponent<DistanceJoint2D> ());
+		if (!alive)
+			return;
+		GameObject bulb = null;
+		if (id < length) {
+			if (id < length - 1) {
+				bulb = Instantiate (hairBulbPrefab, new Vector3 (0, 0, 0), Quaternion.identity);
+				bulb.GetComponent<Hair> ().alive = false;
+			}
+			foreach (Transform child in children) {
+				child.gameObject.GetComponent<HairSegment> ().Cut (id, bulb);
+			}
+			length = id;
+			Debug.Log (gameObject.name + "Cut" + id);
+			children = children.Where (i => i.gameObject.GetComponent<HairSegment> ().id < id).ToList ();
+			if (bulb != null) {
+				Destroy (bulb.transform.GetChild (0).gameObject.GetComponent<DistanceJoint2D> ());
+			}
 		}
 	}
 
@@ -86,5 +95,12 @@ public class Hair : MonoBehaviour {
 
 	public void RegisterNewEnding(GameObject child) {
 		lastSegment = child;
+	}
+
+	public void Die() {
+		foreach (Transform child in children) {
+			Destroy(child.gameObject);
+		}
+		Destroy (gameObject);
 	}
 }

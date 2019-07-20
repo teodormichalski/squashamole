@@ -52,17 +52,14 @@ public class Track : MonoBehaviour
                 
         }
         Counter++;
-        foreach (var hair in FindObjectsOfType(typeof(GameObject)) as GameObject[])
+		foreach (var hair in GameObject.FindGameObjectsWithTag("HairSegment"))
         {
-            if (hair.name.Contains("Segment"))
+            float distfromcur = Vector3.Distance(hair.GetComponent<Transform>().position, castpoint.origin);
+            if (distfromcur < 9.71f && Counter > 1)
             {
-                float distfromcur = Vector3.Distance(hair.GetComponent<Transform>().position, castpoint.origin);
-                if (distfromcur < 9.71f && !hair.transform.parent.name.Contains("Hair Bulb") && Counter > 1)
-                {
-					hair.GetComponent<HairSegment>().GetCut();
-                    Counter = 0;
+				hair.GetComponent<HairSegment>().GetCut();
+                Counter = 0;
 
-                }
             }
         }
 

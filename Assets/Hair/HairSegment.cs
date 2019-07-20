@@ -19,9 +19,9 @@ public class HairSegment : MonoBehaviour
     {
 		if (test_cut) {
 			hairBulb.Cut(id);
-		}/*
+		}
 		if (transform.position.y <= -10)
-			Destroy (gameObject);*/
+			hairBulb.Die ();
     }
 
 	public void GetCut() {
@@ -50,4 +50,5 @@ public class HairSegment : MonoBehaviour
 		newSegment.GetComponent<DistanceJoint2D> ().connectedBody = gameObject.GetComponent<Rigidbody2D> ();
 		hairBulb.RegisterNewChild (newSegment.transform);
 	}
+		
 }
