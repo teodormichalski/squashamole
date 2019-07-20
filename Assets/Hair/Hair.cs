@@ -18,14 +18,6 @@ public class Hair : MonoBehaviour {
 	void Start () {
 		lineRenderer = this.GetComponent<LineRenderer> ();
 		children = transform.Cast<Transform> ().ToList();
-		Rigidbody2D last = null;
-		foreach(Transform child in children) {
-			if (last != null) {
-				child.GetComponent<FrictionJoint2D> ().connectedBody = last;
-			}
-			last = child.GetComponent<Rigidbody2D> ();
-		}
-		lastSegment = last.gameObject;
 		vertices = children.Select (i => i.position).ToArray();
 		length = children.Count ();
 		lineRenderer.positionCount = vertices.Length;
