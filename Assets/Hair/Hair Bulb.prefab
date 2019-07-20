@@ -51,7 +51,12 @@ MonoBehaviour:
   hairSegmentPrefab: {fileID: 3418831487420806261, guid: 69b4070e57218954b8ce0aec987b3567,
     type: 3}
   head: {fileID: 0}
+  firstSegment: {fileID: 0}
   test_grow: 0
+  alive: 1
+  growThreeshold: 0
+  minThreeshold: 0
+  maxThreeshold: 0
 --- !u!120 &3126335077577123306
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -88,7 +93,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}

@@ -15,6 +15,7 @@ public class Hair : MonoBehaviour {
 	public GameObject head;
 	public GameObject firstSegment;
 	public bool test_grow;
+	public bool alive = true;
 	public int growThreeshold;
 	public int minThreeshold;
 	public int maxThreeshold;
@@ -24,7 +25,7 @@ public class Hair : MonoBehaviour {
 	void Start () {
 		if (head == null)
 			head = GameObject.Find ("Head");
-		if (firstSegment == null)
+		if ((firstSegment == null) && (gameObject.transform.childCount > 0))
 			firstSegment = gameObject.transform.GetChild (0).gameObject;
 		lineRenderer = this.GetComponent<LineRenderer> ();
 		children = transform.Cast<Transform> ().ToList();
@@ -34,18 +35,22 @@ public class Hair : MonoBehaviour {
 		length = children.Count ();
 		lineRenderer.positionCount = vertices.Length;
 		lineRenderer.SetPositions (vertices);
-		firstSegment.GetComponent<DistanceJoint2D> ().connectedBody = head.GetComponent<Rigidbody2D>();
-		firstSegment.GetComponent<DistanceJoint2D> ().connectedAnchor = new Vector2 (firstSegment.transform.position.x, firstSegment.transform.position.y);
+		if (firstSegment != null) {
+			firstSegment.GetComponent<DistanceJoint2D> ().connectedBody = head.GetComponent<Rigidbody2D> ();
+			firstSegment.GetComponent<DistanceJoint2D> ().connectedAnchor = new Vector2 (firstSegment.transform.position.x, firstSegment.transform.position.y);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		growCounter++;
+		if ((!alive) && (transform.childCount == 0))
+			Destroy (gameObject);
 		if (test_grow) {
 			test_grow = false;
 			Grow ();
 		}
-		if ((growCounter >= growThreeshold) && (length <= 1)) {
+		if ((growCounter >= growThreeshold) && (length > 1) && (alive)) {
 			growCounter = 0;
 			Grow ();
 		}
@@ -64,6 +69,9 @@ public class Hair : MonoBehaviour {
 			child.gameObject.GetComponent<HairSegment>().Cut (id, bulb);
 		}
 		children = children.Where (i => i.gameObject.GetComponent<HairSegment> ().id < id).ToList();
+		if (bulb.transform.childCount > 0) {
+			Destroy (bulb.transform.GetChild (0).gameObject.GetComponent<DistanceJoint2D> ());
+		}
 	}
 
 	public void Grow() {

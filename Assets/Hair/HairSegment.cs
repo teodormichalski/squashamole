@@ -19,8 +19,14 @@ public class HairSegment : MonoBehaviour
     {
 		if (test_cut) {
 			hairBulb.Cut(id);
-		}
+		}/*
+		if (transform.position.y <= -10)
+			Destroy (gameObject);*/
     }
+
+	public void GetCut() {
+		if(id != 0) hairBulb.Cut (id);
+	}
 
 	public void Cut(int id, GameObject bulb) {
 		if (id == this.id) {
@@ -28,6 +34,8 @@ public class HairSegment : MonoBehaviour
 		}
 		if (id < this.id) {
 			gameObject.transform.parent = bulb.transform;
+			hairBulb = bulb.GetComponent<Hair> ();
+			hairBulb.alive = false;
 		}
 		if (id == this.id + 1) {
 			hairBulb.RegisterNewEnding (this.gameObject);

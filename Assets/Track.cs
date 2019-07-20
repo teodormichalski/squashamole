@@ -59,7 +59,7 @@ public class Track : MonoBehaviour
                 float distfromcur = Vector3.Distance(hair.GetComponent<Transform>().position, castpoint.origin);
                 if (distfromcur < 9.71f && !hair.transform.parent.name.Contains("Hair Bulb") && Counter > 1)
                 {
-                    hair.GetComponent<HairSegment>().test_cut = true;
+					hair.GetComponent<HairSegment>().GetCut();
                     Counter = 0;
 
                 }

@@ -177,12 +177,12 @@ PrefabInstance:
     - target: {fileID: 3126335077577123304, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
       propertyPath: maxThreeshold
-      value: 180
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3126335077577123304, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
       propertyPath: minThreeshold
-      value: 120
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
