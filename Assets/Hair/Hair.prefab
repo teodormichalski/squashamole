@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 1055439335556705512, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.117
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1055439335556705512, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.314
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1055439335556705512, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
@@ -30,17 +30,17 @@ PrefabInstance:
     - target: {fileID: 1055439335556705512, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1055439335556705512, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1055439335556705512, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1055439335556705512, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1055439335556705045, guid: 69b4070e57218954b8ce0aec987b3567,
+        type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 3100580241218097546}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69b4070e57218954b8ce0aec987b3567, type: 3}
 --- !u!1 &630774713815232591 stripped
@@ -95,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 3126335077577123305, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3126335077577123305, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
@@ -164,61 +169,17 @@ PrefabInstance:
       propertyPath: test_grow
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.9056604
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.8379852
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.14951938
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.r
-      value: 0.8396226
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.g
-      value: 0.09109115
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.b
-      value: 0.09109115
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
-      value: -0.39143586
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
-      value: -0.39143586
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
-      value: 0.26923078
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0563a8448b07d4fa4e4bc9ba1917a0, type: 3}
 --- !u!4 &630774713437613852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3126335077577123305, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2567631723687611125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &3100580241218097546 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 623034139218205567, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
     type: 3}
   m_PrefabInstance: {fileID: 2567631723687611125}
   m_PrefabAsset: {fileID: 0}
