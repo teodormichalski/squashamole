@@ -24,7 +24,7 @@ public class Hair : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (head == null)
-			head = GameObject.Find ("Head");
+			head = GameObject.Find ("head");
 		if ((firstSegment == null) && (gameObject.transform.childCount > 0))
 			firstSegment = gameObject.transform.GetChild (0).gameObject;
 		growCounter = 0;

@@ -5,12 +5,21 @@ using UnityEngine;
 public class Track : MonoBehaviour
 {
 	public float cutThreeshold;
+	public float precision;
     private Vector3 pos2;
     private float width;
     private float height;
     TrailRenderer trail;
     Vector3 castpoint;
 	Vector3 prevCastpoint = Vector3.zero;
+
+	public int cooldown;
+	private int cdnCounter;
+	public GameObject leftEar;
+	public GameObject rightEar;
+	public GameObject nose;
+	public GameObject neck;
+	public Misbehaviour receiver;
 
 	public static Vector3 ProjectPointOnLine(Vector3 linePoint, Vector3 lineVec, Vector3 point){		
  
@@ -84,6 +93,12 @@ public class Track : MonoBehaviour
     void Start()
     {
         trail = gameObject.GetComponentInChildren<TrailRenderer>();
+		rightEar = GameObject.Find ("ear right");
+		leftEar = GameObject.Find ("ear left");
+		neck = GameObject.Find ("neck");
+		nose = GameObject.Find ("nose 2");
+		receiver = GameObject.Find ("Mateuszek").GetComponent<Misbehaviour>();
+		cdnCounter = 0;
     }
 		
     void Awake()
@@ -128,5 +143,33 @@ public class Track : MonoBehaviour
             }
         }
 
+		Vector2 castpoint2D = new Vector2 (castpoint.x, castpoint.y);
+		Vector2 step = new Vector2 (((castpoint - prevCastpoint) / precision).x, ((castpoint - prevCastpoint) / precision).y);
+		if (cdnCounter >= cooldown) {
+			for (int i = 0; i < precision; i++) {
+				if (rightEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.cutRight = true;
+					cdnCounter = 0;
+					break;
+				}
+				if (leftEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.cutLeft = true;
+					cdnCounter = 0;
+					break;
+				}
+				if (nose.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.receive = true;
+					cdnCounter = 0;
+					break;
+				}
+				if (neck.GetComponent<BoxCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.receive = true;
+					cdnCounter = 0;
+					break;
+				}
+			}
+		} else {
+			cdnCounter++;
+		}
     }
 }
