@@ -120,6 +120,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &188427707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8438724485361833986, guid: ced47f515073a124c8724c2080a9216d,
+    type: 3}
+  m_PrefabInstance: {fileID: 749189385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &188427710
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188427707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24531871, y: -0.20615888}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.67, y: 4.88}
+    newSize: {x: 2.67, y: 4.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7270745, y: 0.93353033}
+  m_EdgeRadius: 0
 --- !u!1001 &749189385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -552,6 +584,76 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5751811920314698372, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751811920314698372, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7632012420459797386, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 734714039060846332, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080902326702875775, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449705003275335584, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536193500540408464, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 945222233369425996, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462259932676208002, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.49213928
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462259932676208002, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.93865085
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462259932676208002, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_Angle
+      value: 5.5417314
+      objectReference: {fileID: 0}
+    - target: {fileID: 814234184759122339, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: m_Angle
+      value: -111.95004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164661212326432505, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: receive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164661212326432505, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: maxDamage
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ced47f515073a124c8724c2080a9216d, type: 3}
 --- !u!1 &762953541
@@ -668,7 +770,17 @@ PrefabInstance:
     - target: {fileID: 6873904004754946214, guid: 230c69d7cdb9d7a499494f7a3e3f715d,
         type: 3}
       propertyPath: cutThreeshold
-      value: 0
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873904004754946214, guid: 230c69d7cdb9d7a499494f7a3e3f715d,
+        type: 3}
+      propertyPath: precision
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873904004754946214, guid: 230c69d7cdb9d7a499494f7a3e3f715d,
+        type: 3}
+      propertyPath: cooldown
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6873904004819369400, guid: 230c69d7cdb9d7a499494f7a3e3f715d,
         type: 3}

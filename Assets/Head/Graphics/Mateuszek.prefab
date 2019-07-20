@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1791395483128442439}
   - component: {fileID: 3386604943701226494}
   - component: {fileID: 857262417345460787}
+  - component: {fileID: 2278613864350685954}
   m_Layer: 0
   m_Name: ear left
   m_TagString: Untagged
@@ -129,6 +130,22 @@ SliderJoint2D:
   m_TranslationLimits:
     m_LowerTranslation: -0.1
     m_UpperTranslation: 0.1
+--- !u!70 &2278613864350685954
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42421645185488170}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.077238455, y: 0}
+  m_Size: {x: 0.9155227, y: 1.6539395}
+  m_Direction: 0
 --- !u!1 &54762766714724778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1609,7 @@ GameObject:
   - component: {fileID: 1349071134338884380}
   - component: {fileID: 1856987300600719007}
   - component: {fileID: 5603355710735641966}
+  - component: {fileID: 634362889532758902}
   m_Layer: 0
   m_Name: ear right
   m_TagString: Untagged
@@ -1709,6 +1727,22 @@ SliderJoint2D:
   m_TranslationLimits:
     m_LowerTranslation: -0.1
     m_UpperTranslation: 0.1
+--- !u!70 &634362889532758902
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904501145575197978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.057929233, y: 0.00000029802322}
+  m_Size: {x: 1.024142, y: 1.4339392}
+  m_Direction: 0
 --- !u!1 &7090082882542697305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2402,7 @@ GameObject:
   - component: {fileID: 7241923438431900179}
   - component: {fileID: 7241923438431900177}
   - component: {fileID: 5964276982474752335}
+  - component: {fileID: 629943419495467737}
   m_Layer: 0
   m_Name: nose 2
   m_TagString: Untagged
@@ -2486,6 +2521,22 @@ SliderJoint2D:
   m_TranslationLimits:
     m_LowerTranslation: -0.5
     m_UpperTranslation: 0.2
+--- !u!70 &629943419495467737
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7241923438431900181}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0053518848, y: -0.14183508}
+  m_Size: {x: 1.6729372, y: 0.3823033}
+  m_Direction: 1
 --- !u!1 &7241923438541884387
 GameObject:
   m_ObjectHideFlags: 0
