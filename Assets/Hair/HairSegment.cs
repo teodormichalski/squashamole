@@ -39,7 +39,6 @@ public class HairSegment : MonoBehaviour
 		newSegment.GetComponent<HairSegment> ().id = id + 1;
 		newSegment.transform.parent = transform.parent;
 		newSegment.GetComponent<DistanceJoint2D> ().connectedBody = gameObject.GetComponent<Rigidbody2D> ();
-		newSegment.GetComponent<FrictionJoint2D> ().connectedBody = gameObject.GetComponent<Rigidbody2D> ();
 		hairBulb.RegisterNewChild (newSegment.transform);
 	}
 }

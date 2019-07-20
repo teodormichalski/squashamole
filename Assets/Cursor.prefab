@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3126335077577123311
+--- !u!1 &6873904004754946215
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,60 +8,86 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3126335077577123305}
-  - component: {fileID: 3126335077577123304}
-  - component: {fileID: 3126335077577123306}
+  - component: {fileID: 6873904004754946213}
+  - component: {fileID: 6873904004754946214}
   m_Layer: 0
-  m_Name: Hair
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3126335077577123305
+--- !u!4 &6873904004754946213
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126335077577123311}
+  m_GameObject: {fileID: 6873904004754946215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.27, z: 0}
+  m_LocalPosition: {x: 0.81404394, y: 0.104771525, z: -1.6044922}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6873904004819369401}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3126335077577123304
+--- !u!114 &6873904004754946214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126335077577123311}
+  m_GameObject: {fileID: 6873904004754946215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f242e78156b05847852ee345ff7a8e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 10c559aa044f0924c99d8573d646430a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastSegment: {fileID: 0}
-  hairBulbPrefab: {fileID: 1652620932396953297, guid: 24994746ce83d4e469c2e3e26196a476,
-    type: 3}
-  hairSegmentPrefab: {fileID: 3418831487420806261, guid: 69b4070e57218954b8ce0aec987b3567,
-    type: 3}
-  test_grow: 0
---- !u!120 &3126335077577123306
-LineRenderer:
+--- !u!1 &6873904004819369402
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126335077577123311}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6873904004819369401}
+  - component: {fileID: 6873904004819369400}
+  m_Layer: 0
+  m_Name: Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6873904004819369401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873904004819369402}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6873904004754946213}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!96 &6873904004819369400
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873904004819369402}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
@@ -87,32 +113,39 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  m_Time: 0.12
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1450386
-        inSlope: 0
-        outSlope: 0
+        value: 0
+        inSlope: 2.4749305
+        outSlope: 2.4749305
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98262316
       - serializedVersion: 3
-        time: 1
-        value: 0.021373957
-        inSlope: 0
-        outSlope: 0
+        time: 0.25327915
+        value: 0.20213577
+        inSlope: -0.14915444
+        outSlope: -0.14915444
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 1
+        outWeight: 0.98000324
+      - serializedVersion: 3
+        time: 0.4541474
+        value: 0.11702809
+        inSlope: -0.15225059
+        outSlope: -0.15225059
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.92308825
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -152,5 +185,6 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 1
-  m_Loop: 0
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+  m_Emitting: 1
