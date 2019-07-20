@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1055439335556705044}
   - component: {fileID: 1055439335556705045}
   - component: {fileID: 7180270889948629426}
+  - component: {fileID: -4428671682523171295}
   m_Layer: 0
   m_Name: Segment
   m_TagString: Untagged
@@ -136,3 +137,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test_cut: 0
   id: 0
+--- !u!58 &-4428671682523171295
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055439335556705513}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.03

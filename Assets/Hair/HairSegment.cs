@@ -6,7 +6,7 @@ public class HairSegment : MonoBehaviour
 {
 	public bool test_cut;
 	public int id;
-	private Hair hairBulb;
+	public Hair hairBulb;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@ public class HairSegment : MonoBehaviour
 		GameObject newSegment = Instantiate (hairSegmentPrefab, new Vector3(this.transform.position.x, this.transform.position.y - 0.14f, this.transform.position.z), Quaternion.identity);
 		newSegment.GetComponent<HairSegment> ().id = id + 1;
 		newSegment.transform.parent = transform.parent;
+		newSegment.GetComponent<HairSegment> ().hairBulb = hairBulb;
 		newSegment.GetComponent<DistanceJoint2D> ().connectedBody = gameObject.GetComponent<Rigidbody2D> ();
 		hairBulb.RegisterNewChild (newSegment.transform);
 	}
