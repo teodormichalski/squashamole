@@ -9,6 +9,7 @@ public class Track : MonoBehaviour
     private float width;
     private float height;
     TrailRenderer trail;
+    bool once;
     int Counter;
     void Start()
     {
@@ -51,12 +52,18 @@ public class Track : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Contains("Segment") && Counter > 2)
+        if (collision.gameObject.name.Contains("Segment") && Counter > 5)
         {
             collision.gameObject.GetComponent<HairSegment>().test_cut = true;
             Debug.Log(collision.gameObject.GetComponent<HairSegment>().id);
             Counter = 0;
         }
-        
+        Debug.Log(collision.name);
+        if (collision.gameObject.name.Contains("Head"))
+        {
+            collision.gameObject.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            Debug.Log("ebe");
+        }
+
     }
 }
