@@ -12,22 +12,41 @@ public class Hair : MonoBehaviour {
 	public GameObject lastSegment;
 	public GameObject hairBulbPrefab;
 	public GameObject hairSegmentPrefab;
+	public GameObject head;
+	public GameObject firstSegment;
 	public bool test_grow;
+	public int growThreeshold;
+	public int minThreeshold;
+	public int maxThreeshold;
+	private int growCounter;
 
 	// Use this for initialization
 	void Start () {
+		if (head == null)
+			head = GameObject.Find ("Head");
+		if (firstSegment == null)
+			firstSegment = gameObject.transform.GetChild (0).gameObject;
 		lineRenderer = this.GetComponent<LineRenderer> ();
 		children = transform.Cast<Transform> ().ToList();
 		vertices = children.Select (i => i.position).ToArray();
+		growCounter = 0;
+		if (growThreeshold <= 0) growThreeshold = Random.Range (minThreeshold, maxThreeshold);
 		length = children.Count ();
 		lineRenderer.positionCount = vertices.Length;
 		lineRenderer.SetPositions (vertices);
+		firstSegment.GetComponent<DistanceJoint2D> ().connectedBody = head.GetComponent<Rigidbody2D>();
+		firstSegment.GetComponent<DistanceJoint2D> ().connectedAnchor = new Vector2 (firstSegment.transform.position.x, firstSegment.transform.position.y);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		growCounter++;
 		if (test_grow) {
 			test_grow = false;
+			Grow ();
+		}
+		if ((growCounter >= growThreeshold) && (length <= 1)) {
+			growCounter = 0;
 			Grow ();
 		}
 	}

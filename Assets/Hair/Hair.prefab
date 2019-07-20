@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1055439335556705044, guid: 69b4070e57218954b8ce0aec987b3567,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1055439335556705045, guid: 69b4070e57218954b8ce0aec987b3567,
         type: 3}
       propertyPath: m_ConnectedRigidBody
@@ -87,6 +92,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3126335077577123311, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_Name
+      value: Hair
+      objectReference: {fileID: 0}
     - target: {fileID: 3126335077577123305, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -142,11 +152,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3126335077577123311, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
-        type: 3}
-      propertyPath: m_Name
-      value: Hair
-      objectReference: {fileID: 0}
     - target: {fileID: 3126335077577123304, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
       propertyPath: lastSegment
@@ -169,10 +174,25 @@ PrefabInstance:
       propertyPath: test_grow
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123304, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: maxThreeshold
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123304, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: minThreeshold
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0563a8448b07d4fa4e4bc9ba1917a0, type: 3}
