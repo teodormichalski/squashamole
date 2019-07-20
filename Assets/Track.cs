@@ -9,8 +9,9 @@ public class Track : MonoBehaviour
     private float width;
     private float height;
     TrailRenderer trail;
-    bool once;
     int Counter;
+    Ray castpoint;
+
     void Start()
     {
         trail = gameObject.GetComponentInChildren<TrailRenderer>();
@@ -37,32 +38,32 @@ public class Track : MonoBehaviour
                 {
                     trail.enabled = true;
                     Vector3 mouse = Input.mousePosition;
-                    Ray castpoint = Camera.main.ScreenPointToRay(mouse);
+                    castpoint = Camera.main.ScreenPointToRay(mouse);
                     transform.position = castpoint.origin;
                 }
             }
         }
         else
         {
-            Vector3 mouse = Input.mousePosition;
-            Ray castpoint = Camera.main.ScreenPointToRay(mouse);
+            castpoint = Camera.main.ScreenPointToRay(Input.mousePosition);
             transform.position = castpoint.origin;
+            RaycastHit2D hit = Physics2D.Raycast(castpoint.origin,castpoint.direction);
+
+                
         }
         Counter++;
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Contains("Segment") && Counter > 5)
+        foreach (var hair in FindObjectsOfType(typeof(GameObject)) as GameObject[])
         {
-            collision.gameObject.GetComponent<HairSegment>().test_cut = true;
-            Debug.Log(collision.gameObject.GetComponent<HairSegment>().id);
-            Counter = 0;
-        }
-        Debug.Log(collision.name);
-        if (collision.gameObject.name.Contains("Head"))
-        {
-            collision.gameObject.GetComponentInChildren<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            Debug.Log("ebe");
+            if (hair.name.Contains("Segment"))
+            {
+                float distfromcur = Vector3.Distance(hair.GetComponent<Transform>().position, castpoint.origin);
+                if (distfromcur < 9.71f && !hair.transform.parent.name.Contains("Hair Bulb") && Counter > 1)
+                {
+                    hair.GetComponent<HairSegment>().test_cut = true;
+                    Counter = 0;
+
+                }
+            }
         }
 
     }
