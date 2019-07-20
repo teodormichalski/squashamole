@@ -9,6 +9,7 @@ public class Track : MonoBehaviour
     private float width;
     private float height;
     TrailRenderer trail;
+    int Counter;
     void Start()
     {
         trail = gameObject.GetComponentInChildren<TrailRenderer>();
@@ -46,5 +47,16 @@ public class Track : MonoBehaviour
             Ray castpoint = Camera.main.ScreenPointToRay(mouse);
             transform.position = castpoint.origin;
         }
+        Counter++;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Contains("Segment") && Counter > 2)
+        {
+            collision.gameObject.GetComponent<HairSegment>().test_cut = true;
+            Debug.Log(collision.gameObject.GetComponent<HairSegment>().id);
+            Counter = 0;
+        }
+        
     }
 }
