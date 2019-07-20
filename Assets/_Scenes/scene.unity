@@ -202,6 +202,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 796803308410085133, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: minThreeshold
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 796803308410085133, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: maxThreeshold
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8559775718468792382, guid: ced47f515073a124c8724c2080a9216d,
         type: 3}
       propertyPath: m_IsActive
@@ -211,6 +221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362663150634505653, guid: ced47f515073a124c8724c2080a9216d,
+        type: 3}
+      propertyPath: minThreeshold
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3548077955918961201, guid: ced47f515073a124c8724c2080a9216d,
         type: 3}
@@ -648,6 +663,11 @@ PrefabInstance:
     - target: {fileID: 6873904004754946213, guid: 230c69d7cdb9d7a499494f7a3e3f715d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873904004754946214, guid: 230c69d7cdb9d7a499494f7a3e3f715d,
+        type: 3}
+      propertyPath: cutThreeshold
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6873904004819369400, guid: 230c69d7cdb9d7a499494f7a3e3f715d,
