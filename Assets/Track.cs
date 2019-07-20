@@ -4,20 +4,88 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-    // Start is called before the first frame update
+	public float cutThreeshold;
     private Vector3 pos2;
     private float width;
     private float height;
     TrailRenderer trail;
-    int Counter;
-    Ray castpoint;
+    Vector3 castpoint;
+	Vector3 prevCastpoint = Vector3.zero;
+
+	public static Vector3 ProjectPointOnLine(Vector3 linePoint, Vector3 lineVec, Vector3 point){		
+ 
+		//get vector from point on line to point in space
+		Vector3 linePointToPoint = point - linePoint;
+ 
+		float t = Vector3.Dot(linePointToPoint, lineVec);
+ 
+		return linePoint + lineVec * t;
+	}
+
+	public static int PointOnWhichSideOfLineSegment(Vector3 linePoint1, Vector3 linePoint2, Vector3 point){
+ 
+		Vector3 lineVec = linePoint2 - linePoint1;
+		Vector3 pointVec = point - linePoint1;
+ 
+		float dot = Vector3.Dot(pointVec, lineVec);
+ 
+		//point is on side of linePoint2, compared to linePoint1
+		if(dot > 0){
+ 
+			//point is on the line segment
+			if(pointVec.magnitude <= lineVec.magnitude){
+ 
+				return 0;
+			}
+ 
+			//point is not on the line segment and it is on the side of linePoint2
+			else{
+ 
+				return 2;
+			}
+		}
+ 
+		//Point is not on side of linePoint2, compared to linePoint1.
+		//Point is not on the line segment and it is on the side of linePoint1.
+		else{
+ 
+			return 1;
+		}
+	}
+
+	public static Vector3 ProjectPointOnLineSegment(Vector3 linePoint1, Vector3 linePoint2, Vector3 point){
+ 
+		Vector3 vector = linePoint2 - linePoint1;
+ 
+		Vector3 projectedPoint = ProjectPointOnLine(linePoint1, vector.normalized, point);
+ 
+		int side = PointOnWhichSideOfLineSegment(linePoint1, linePoint2, projectedPoint);
+ 
+		//The projected point is on the line segment
+		if(side == 0){
+ 
+			return projectedPoint;
+		}
+ 
+		if(side == 1){
+ 
+			return linePoint1;
+		}
+ 
+		if(side == 2){
+ 
+			return linePoint2;
+		}
+ 
+		//output is invalid
+		return Vector3.zero;
+	}
 
     void Start()
     {
         trail = gameObject.GetComponentInChildren<TrailRenderer>();
     }
-
-
+		
     void Awake()
     {
         width = (float)Screen.width / 2.0f;
@@ -38,28 +106,25 @@ public class Track : MonoBehaviour
                 {
                     trail.enabled = true;
                     Vector3 mouse = Input.mousePosition;
-                    castpoint = Camera.main.ScreenPointToRay(mouse);
-                    transform.position = castpoint.origin;
+					prevCastpoint = castpoint;
+					castpoint = new Vector3(Camera.main.ScreenPointToRay(mouse).origin.x, Camera.main.ScreenPointToRay(mouse).origin.y, 0);
+					transform.position = castpoint;
                 }
-            }
+			}
         }
         else
         {
-            castpoint = Camera.main.ScreenPointToRay(Input.mousePosition);
-            transform.position = castpoint.origin;
-            RaycastHit2D hit = Physics2D.Raycast(castpoint.origin,castpoint.direction);
-
+			prevCastpoint = castpoint;
+			castpoint = new Vector3(Camera.main.ScreenPointToRay(Input.mousePosition).origin.x, Camera.main.ScreenPointToRay(Input.mousePosition).origin.y, 0);
+			transform.position = castpoint;
                 
         }
-        Counter++;
 		foreach (var hair in GameObject.FindGameObjectsWithTag("HairSegment"))
         {
-            float distfromcur = Vector3.Distance(hair.GetComponent<Transform>().position, castpoint.origin);
-            if (distfromcur < 9.71f && Counter > 1)
-            {
+			Vector3 point = Track.ProjectPointOnLineSegment(prevCastpoint, castpoint, hair.transform.position);
+			if (Vector3.Distance(point, hair.transform.position) < cutThreeshold)
+            {	
 				hair.GetComponent<HairSegment>().GetCut();
-                Counter = 0;
-
             }
         }
 

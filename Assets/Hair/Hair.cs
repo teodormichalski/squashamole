@@ -52,7 +52,7 @@ public class Hair : MonoBehaviour {
 		}
 		if ((growCounter >= growThreeshold) && (length > 1) && (alive)) {
 			growCounter = 0;
-			//Grow ();
+			Grow ();
 		}
 	}
 
@@ -75,7 +75,6 @@ public class Hair : MonoBehaviour {
 				child.gameObject.GetComponent<HairSegment> ().Cut (id, bulb);
 			}
 			length = id;
-			Debug.Log (gameObject.name + "Cut" + id);
 			children = children.Where (i => i.gameObject.GetComponent<HairSegment> ().id < id).ToList ();
 			if (bulb != null) {
 				Destroy (bulb.transform.GetChild (0).gameObject.GetComponent<DistanceJoint2D> ());
