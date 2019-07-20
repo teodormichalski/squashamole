@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1652620932396953302}
   - component: {fileID: 1652620932396953300}
   m_Layer: 0
-  m_Name: Hair 1
+  m_Name: Hair Bulb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f242e78156b05847852ee345ff7a8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastSegment: {fileID: 0}
+  hairBulbPrefab: {fileID: 1652620932396953297}
+  hairSegmentPrefab: {fileID: 3527370336723171111, guid: 6d1239ff064889e47a5c3bd4aafe2388,
+    type: 3}
+  test_grow: 0
 --- !u!120 &1652620932396953300
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7441498240159582922}
   - component: {fileID: 7441498240159582923}
   - component: {fileID: 7441498240159582920}
+  - component: {fileID: 5060511410894119696}
   - component: {fileID: 4117518925698266075}
   m_Layer: 0
   m_Name: Segment (15)
@@ -139,8 +140,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &5060511410894119696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498240159582927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498241877139331}
+  threeshold: 0.14
 --- !u!114 &4117518925698266075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 15
 --- !u!1 &7441498240332124261
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +183,7 @@ GameObject:
   - component: {fileID: 7441498240332124260}
   - component: {fileID: 7441498240332124257}
   - component: {fileID: 7441498240332124262}
+  - component: {fileID: 13867604719535288}
   - component: {fileID: 8194044583642489460}
   m_Layer: 0
   m_Name: Segment (12)
@@ -293,8 +310,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &13867604719535288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498240332124261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498240352919309}
+  threeshold: 0.14
 --- !u!114 &8194044583642489460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 12
 --- !u!1 &7441498240352919309
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +353,7 @@ GameObject:
   - component: {fileID: 7441498240352919308}
   - component: {fileID: 7441498240352919305}
   - component: {fileID: 7441498240352919310}
+  - component: {fileID: 1793607451892964857}
   - component: {fileID: 4610273175611729328}
   m_Layer: 0
   m_Name: Segment (11)
@@ -447,8 +480,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &1793607451892964857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498240352919309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498242252555037}
+  threeshold: 0.14
 --- !u!114 &4610273175611729328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 11
 --- !u!1 &7441498240793615209
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +523,7 @@ GameObject:
   - component: {fileID: 7441498240793615208}
   - component: {fileID: 7441498240793615221}
   - component: {fileID: 7441498240793615210}
+  - component: {fileID: 2492481397271750889}
   - component: {fileID: 298374355844277937}
   m_Layer: 0
   m_Name: Segment (5)
@@ -601,8 +650,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &2492481397271750889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498240793615209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498242092680369}
+  threeshold: 0.14
 --- !u!114 &298374355844277937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 5
 --- !u!1 &7441498240852041070
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +740,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f242e78156b05847852ee345ff7a8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastSegment: {fileID: 7441498240159582927}
+  hairBulbPrefab: {fileID: 1652620932396953297, guid: 24994746ce83d4e469c2e3e26196a476,
+    type: 3}
+  hairSegmentPrefab: {fileID: 3527370336723171111, guid: 6d1239ff064889e47a5c3bd4aafe2388,
+    type: 3}
+  test_grow: 0
 --- !u!120 &7441498240852041067
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -793,6 +863,7 @@ GameObject:
   - component: {fileID: 7441498240883100840}
   - component: {fileID: 7441498240883100853}
   - component: {fileID: 7441498240883100842}
+  - component: {fileID: 960617895531970684}
   - component: {fileID: 4408707168543193273}
   m_Layer: 0
   m_Name: Segment (9)
@@ -919,8 +990,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &960617895531970684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498240883100841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498241934862459}
+  threeshold: 0.14
 --- !u!114 &4408707168543193273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,7 +1018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 9
 --- !u!1 &7441498240996868667
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +1033,7 @@ GameObject:
   - component: {fileID: 7441498240996869574}
   - component: {fileID: 7441498240996869575}
   - component: {fileID: 7441498240996869572}
+  - component: {fileID: 7838264130358844571}
   - component: {fileID: 740100063060272992}
   m_Layer: 0
   m_Name: Segment (1)
@@ -1073,8 +1160,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &7838264130358844571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498240996868667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498241667648619}
+  threeshold: 0.14
 --- !u!114 &740100063060272992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,7 +1188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 1
 --- !u!1 &7441498241481013393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1203,7 @@ GameObject:
   - component: {fileID: 7441498241481013392}
   - component: {fileID: 7441498241481013405}
   - component: {fileID: 7441498241481013394}
+  - component: {fileID: 4660603246419112604}
   - component: {fileID: 5841529735076403615}
   m_Layer: 0
   m_Name: Segment (2)
@@ -1227,8 +1330,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &4660603246419112604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498241481013393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498240996868667}
+  threeshold: 0.14
 --- !u!114 &5841529735076403615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,7 +1358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 2
 --- !u!1 &7441498241667648619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1373,7 @@ GameObject:
   - component: {fileID: 7441498241667648631}
   - component: {fileID: 7441498241667648629}
   - component: {fileID: 7441498241667648628}
+  - component: {fileID: 7320490499137434696}
   - component: {fileID: 6552994706364846982}
   m_Layer: 0
   m_Name: Segment
@@ -1381,8 +1500,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &7320490499137434696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498241667648619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 0}
+  threeshold: 0.14
 --- !u!114 &6552994706364846982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,7 +1528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 0
 --- !u!1 &7441498241723473266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,6 +1543,7 @@ GameObject:
   - component: {fileID: 7441498241723473273}
   - component: {fileID: 7441498241723473278}
   - component: {fileID: 7441498241723473279}
+  - component: {fileID: 538690789327933901}
   - component: {fileID: 235445366201633831}
   m_Layer: 0
   m_Name: Segment (7)
@@ -1535,8 +1670,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &538690789327933901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498241723473266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498242042903198}
+  threeshold: 0.14
 --- !u!114 &235445366201633831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,7 +1698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 7
 --- !u!1 &7441498241816527276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,6 +1713,7 @@ GameObject:
   - component: {fileID: 7441498241816527279}
   - component: {fileID: 7441498241816527272}
   - component: {fileID: 7441498241816527273}
+  - component: {fileID: 7822732226912094462}
   - component: {fileID: 7058154979171342309}
   m_Layer: 0
   m_Name: Segment (13)
@@ -1689,8 +1840,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &7822732226912094462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498241816527276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498240332124261}
+  threeshold: 0.14
 --- !u!114 &7058154979171342309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,7 +1868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 13
 --- !u!1 &7441498241877139331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1883,7 @@ GameObject:
   - component: {fileID: 7441498241877139330}
   - component: {fileID: 7441498241877139343}
   - component: {fileID: 7441498241877139340}
+  - component: {fileID: 866892223324262558}
   - component: {fileID: 474830875062605902}
   m_Layer: 0
   m_Name: Segment (14)
@@ -1843,8 +2010,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &866892223324262558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498241877139331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498241816527276}
+  threeshold: 0.14
 --- !u!114 &474830875062605902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1857,7 +2038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 14
 --- !u!1 &7441498241934862459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +2053,7 @@ GameObject:
   - component: {fileID: 7441498241934862458}
   - component: {fileID: 7441498241934862343}
   - component: {fileID: 7441498241934862340}
+  - component: {fileID: 6309030577826150029}
   - component: {fileID: 7155806752792421078}
   m_Layer: 0
   m_Name: Segment (8)
@@ -1997,8 +2180,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &6309030577826150029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498241934862459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498241723473266}
+  threeshold: 0.14
 --- !u!114 &7155806752792421078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,7 +2208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 8
 --- !u!1 &7441498242042903198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,6 +2223,7 @@ GameObject:
   - component: {fileID: 7441498242042903193}
   - component: {fileID: 7441498242042903194}
   - component: {fileID: 7441498242042903195}
+  - component: {fileID: 7539391804569932645}
   - component: {fileID: 1871897982640273013}
   m_Layer: 0
   m_Name: Segment (6)
@@ -2151,8 +2350,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &7539391804569932645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498242042903198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498240793615209}
+  threeshold: 0.14
 --- !u!114 &1871897982640273013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2165,7 +2378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 6
 --- !u!1 &7441498242092680369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,6 +2393,7 @@ GameObject:
   - component: {fileID: 7441498242092680368}
   - component: {fileID: 7441498242092680381}
   - component: {fileID: 7441498242092680370}
+  - component: {fileID: 206575098147944224}
   - component: {fileID: 5674742079907353405}
   m_Layer: 0
   m_Name: Segment (4)
@@ -2305,8 +2520,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &206575098147944224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498242092680369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498242171742513}
+  threeshold: 0.14
 --- !u!114 &5674742079907353405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2319,7 +2548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 4
 --- !u!1 &7441498242171742513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,6 +2563,7 @@ GameObject:
   - component: {fileID: 7441498242171742512}
   - component: {fileID: 7441498242171742525}
   - component: {fileID: 7441498242171742514}
+  - component: {fileID: 8762164428437287155}
   - component: {fileID: 293048329087509154}
   m_Layer: 0
   m_Name: Segment (3)
@@ -2459,8 +2690,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &8762164428437287155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498242171742513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498241481013393}
+  threeshold: 0.14
 --- !u!114 &293048329087509154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,7 +2718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 3
 --- !u!1 &7441498242252555037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2733,7 @@ GameObject:
   - component: {fileID: 7441498242252555036}
   - component: {fileID: 7441498242252555033}
   - component: {fileID: 7441498242252555038}
+  - component: {fileID: 5356681155154068792}
   - component: {fileID: 3217553322011628258}
   m_Layer: 0
   m_Name: Segment (10)
@@ -2613,8 +2860,22 @@ FrictionJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.1105}
-  m_MaxForce: 10
-  m_MaxTorque: 0.1
+  m_MaxForce: 3
+  m_MaxTorque: 1
+--- !u!114 &5356681155154068792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441498242252555037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a34216f5b1a8a4382e9877f9a3a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSegment: {fileID: 7441498240883100841}
+  threeshold: 0.14
 --- !u!114 &3217553322011628258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2627,4 +2888,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 10

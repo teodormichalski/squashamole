@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f242e78156b05847852ee345ff7a8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastSegment: {fileID: 2412649961298225330}
+  hairBulbPrefab: {fileID: 1652620932396953297, guid: 24994746ce83d4e469c2e3e26196a476,
+    type: 3}
+  hairSegmentPrefab: {fileID: 3527370336723171111, guid: 6d1239ff064889e47a5c3bd4aafe2388,
+    type: 3}
+  test_grow: 0
 --- !u!120 &2412649959971043762
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -302,4 +308,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb61953428f8841afc293c261c1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: 0
+  test_cut: 0
+  id: 0
