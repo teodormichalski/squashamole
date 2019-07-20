@@ -7,7 +7,7 @@ public static class FaceGenerator
 	private static int flatCount = 1;
 	private static int threeshold = 5;
 	private static float changeChance = 0.5f; 
-	private static int minLength = 0;
+	private static int minLength = 30;
 
 	public static void Randomize() {
 		Random.InitState((int)System.DateTime.Now.Ticks);
