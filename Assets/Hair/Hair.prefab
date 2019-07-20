@@ -164,6 +164,36 @@ PrefabInstance:
       propertyPath: test_grow
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.8379852
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.14951938
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.09109115
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126335077577123306, guid: ee0563a8448b07d4fa4e4bc9ba1917a0,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.09109115
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0563a8448b07d4fa4e4bc9ba1917a0, type: 3}
 --- !u!4 &630774713437613852 stripped
