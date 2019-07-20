@@ -10,8 +10,12 @@ public class Misbehaviour : MonoBehaviour
 	public int damage = 0;
 	public bool dead = false;
 	public bool receive;
+	public bool cutLeft;
+	public bool cutRight;
 	public int mood = 1;
 
+	public GameObject leftEar;
+	public GameObject rightEar;
 	public GameObject[] moodFeatures1;
 	public GameObject[] moodFeatures2;
 	public GameObject[] moodFeatures3;
@@ -37,6 +41,9 @@ public class Misbehaviour : MonoBehaviour
         moodFeatures[3] = moodFeatures4;
         moodFeatures[4] = moodFeatures5;
         ChangeMoodFeatures();
+
+        leftEar = GameObject.Find("ear left");
+        rightEar = GameObject.Find("ear right");
     }
 
     // Update is called once per frame
@@ -47,9 +54,51 @@ public class Misbehaviour : MonoBehaviour
         	receive = false;
         	ReceiveDamage();
         }
+        if (cutRight) 
+        {
+        	cutRight = false;
+        	CutEarRight();
+        }
+        if (cutLeft) 
+        {
+        	cutLeft = false;
+        	CutEarLeft();
+        }
+    }
+
+    void CutEarLeft() {
+    	if (scarsOn[2]) 
+    	{
+    		damage++;
+    		LooseEar(leftEar);
+    	} else {
+    		ReceiveDamage(2);
+    	}
+    }
+
+    void CutEarRight() {
+    	if (scarsOn[3]) 
+    	{
+    		damage++;
+    		LooseEar(rightEar);
+    	} else {
+    		ReceiveDamage(3);
+    	}
+    }
+
+    void LooseEar(GameObject ear) {
+    	GameObject.Destroy(ear.GetComponent<SliderJoint2D>());
+    	ear.GetComponent<Rigidbody2D>().AddForce(Random.onUnitSphere * 10f);
+    	ear.GetComponent<Rigidbody2D>().AddTorque(Random.value * 100f);
     }
 
     void ReceiveDamage()
+    {
+    	int newScarNumber = (int)(Mathf.Floor(Random.Range(0, maxDamage - damage)));
+    	ReceiveDamage(newScarNumber);
+    }
+
+    void ReceiveDamage(int newScarNumber)
     {
     	damage++;
     	if (damage % 4 == 0)
@@ -62,7 +111,6 @@ public class Misbehaviour : MonoBehaviour
     		dead = true;
     		return;
     	}
-    	int newScarNumber = (int)(Mathf.Floor(Random.Range(0, maxDamage - damage)));
     	int i = 0;
     	while (i < newScarNumber || scarsOn[i % maxDamage]) i++;
     	scarsOn[i % maxDamage] = true;

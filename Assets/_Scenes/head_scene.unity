@@ -344,5 +344,35 @@ PrefabInstance:
       propertyPath: mouth.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4017518614270802484, guid: bb6a0a348bbb44dac9feb9845d19fb51,
+        type: 3}
+      propertyPath: leftEar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017518614270802484, guid: bb6a0a348bbb44dac9feb9845d19fb51,
+        type: 3}
+      propertyPath: cutRight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430130195476632087, guid: bb6a0a348bbb44dac9feb9845d19fb51,
+        type: 3}
+      propertyPath: m_LinearOffset.x
+      value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430130195476632087, guid: bb6a0a348bbb44dac9feb9845d19fb51,
+        type: 3}
+      propertyPath: m_LinearOffset.y
+      value: -0.3039999
+      objectReference: {fileID: 0}
+    - target: {fileID: 857262417345460787, guid: bb6a0a348bbb44dac9feb9845d19fb51,
+        type: 3}
+      propertyPath: m_Angle
+      value: -69.14818
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603355710735641966, guid: bb6a0a348bbb44dac9feb9845d19fb51,
+        type: 3}
+      propertyPath: m_Angle
+      value: -111.95004
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb6a0a348bbb44dac9feb9845d19fb51, type: 3}
