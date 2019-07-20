@@ -50,6 +50,7 @@ MonoBehaviour:
     type: 3}
   hairSegmentPrefab: {fileID: 3418831487420806261, guid: 69b4070e57218954b8ce0aec987b3567,
     type: 3}
+  head: {fileID: 0}
   test_grow: 0
 --- !u!120 &3126335077577123306
 LineRenderer:
@@ -163,7 +164,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3126335077577123311}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
