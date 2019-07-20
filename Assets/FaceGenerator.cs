@@ -9,8 +9,21 @@ public static class FaceGenerator
 	private static float changeChance = 0.5f; 
 	private static int minLength = 30;
 
+	private static List<int[]> objectives = new List<int[]>();
+
 	public static void Randomize() {
 		Random.InitState((int)System.DateTime.Now.Ticks);
+		int[] values;
+		values = new int[34];
+		float p = 50;
+		for (int i = 0; i < 24; i++) {
+			p -= 30 / 24;
+			values [i] = (int)Mathf.Round (p);
+		}
+		for (int i = 0; i < 10; i++) {
+			values [i+24] = 20 - i - 1;
+		}
+		objectives.Add(values);
 	}
 
 	public static int[] GenerateFace(int hairCount, int maxLength) {
@@ -31,5 +44,9 @@ public static class FaceGenerator
 			}
 		}
 		return faceStats;
+	}
+
+	public static int[] GetRandomObjective() {
+		return objectives [Random.Range (0, objectives.Count)];
 	}
 }
