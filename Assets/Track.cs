@@ -20,6 +20,11 @@ public class Track : MonoBehaviour
 	public GameObject nose;
 	public GameObject neck;
 	public Misbehaviour receiver;
+	private bool enabled;
+
+	public void SetEnabled(bool state) {
+		enabled = state;
+	}
 
     public static Vector3 ProjectPointOnLine(Vector3 linePoint, Vector3 lineVec, Vector3 point)
     {
@@ -144,6 +149,9 @@ public class Track : MonoBehaviour
             transform.position = castpoint;
 
         }
+
+		if (!enabled)
+			return;
 
         if (prevCastpoint == Vector3.zero)
             return;

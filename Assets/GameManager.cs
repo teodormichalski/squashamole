@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,13 +18,16 @@ public class GameManager : MonoBehaviour
 	public GameObject cursor;
 	public Misbehaviour mateuszek;
 	public int score;
+	public Text scoreUI;
     // Start is called before the first frame update
     void Start()
     {
 		FaceGenerator.Randomize ();
 		modelHair = GameObject.Find ("ModelHair");
 		mateuszek = GameObject.Find ("Mateuszek").GetComponent<Misbehaviour>();
-		StartGame ();
+		scoreUI = GameObject.Find ("Score").GetComponent<Text> ();
+		cursor = GameObject.Find ("Cursor");
+		cursor.GetComponent<Track> ().SetEnabled (false);
     }
 
     private void Awake()
@@ -45,13 +49,15 @@ public class GameManager : MonoBehaviour
 			index++;
 		}
 		objective = FaceGenerator.GetRandomObjective ();
-		cursor.SetActive (true);
+		cursor.GetComponent<Track> ().SetEnabled (true);
 	}
 
 	public void EndGame()
     {
-		cursor.SetActive (false);
+		cursor.GetComponent<Track> ().SetEnabled (false);
+		Debug.Log ("GAme end");
 		score = EvaluateScore (faceStats, objective);
+		scoreUI.text = score.ToString();
 	}
 
 	void Update() {
