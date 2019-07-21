@@ -16,6 +16,7 @@ public class Misbehaviour : MonoBehaviour
 
 	public GameObject leftEar;
 	public GameObject rightEar;
+    public GameObject head;
 	public GameObject[] moodFeatures1;
 	public GameObject[] moodFeatures2;
 	public GameObject[] moodFeatures3;
@@ -44,6 +45,7 @@ public class Misbehaviour : MonoBehaviour
 
         leftEar = GameObject.Find("ear left");
         rightEar = GameObject.Find("ear right");
+        head = GameObject.Find("head");
     }
 
     // Update is called once per frame
@@ -103,7 +105,12 @@ public class Misbehaviour : MonoBehaviour
     	ear.GetComponent<Rigidbody2D>().AddForce(Random.onUnitSphere * 10f);
     	ear.GetComponent<Rigidbody2D>().AddTorque(Random.value * 100f);
     }
-
+    void LooseHead(GameObject head)
+    {
+        head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        head.GetComponent<Rigidbody2D>().AddForce(Random.onUnitSphere * 10f);
+        head.GetComponent<Rigidbody2D>().AddTorque(Random.value * 100f);
+    }
     void ReceiveDamage()
     {
     	int newScarNumber = (int)(Mathf.Floor(Random.Range(0, maxDamage - damage)));
@@ -123,6 +130,7 @@ public class Misbehaviour : MonoBehaviour
     	if (damage > maxDamage) 
     	{
     		dead = true;
+            LooseHead(head);
     		return;
     	}
     	int i = 0;
