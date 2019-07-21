@@ -13,8 +13,8 @@ public class Track : MonoBehaviour
     Vector3 castpoint;
 	Vector3 prevCastpoint = Vector3.zero;
 
-	public int cooldown;
-	private int cdnCounter;
+	public float cooldown;
+	private float cdnCounter;
 	public GameObject leftEar;
 	public GameObject rightEar;
 	public GameObject nose;
@@ -156,31 +156,31 @@ public class Track : MonoBehaviour
 			for (int i = 0; i < precision; i++) {
 				if (rightEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.cutRight = true;
-					cdnCounter = 0;
+					cdnCounter = 0f;
 					receiver.GetComponent<AudioSource> ().Play ();
 					break;
 				}
 				if (leftEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.cutLeft = true;
-					cdnCounter = 0;
+					cdnCounter = 0f;
 					receiver.GetComponent<Quacker> ().Cry ();
 					break;
 				}
 				if (nose.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.receive = true;
-					cdnCounter = 0;
+					cdnCounter = 0f;
 					receiver.GetComponent<Quacker> ().Cry ();
 					break;
 				}
 				if (neck.GetComponent<BoxCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.receive = true;
-					cdnCounter = 0;
+					cdnCounter = 0f;
 					receiver.GetComponent<Quacker> ().Cry ();
 					break;
 				}
 			}
 		} else {
-			cdnCounter++;
+			cdnCounter += Time.deltaTime;
 		}
     }
 }

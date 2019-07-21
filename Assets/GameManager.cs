@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
 	int EvaluateScore(int[] faceStats, int[] objective) {
 		int score = this.score;
-		score = (int)((float)score * Mathf.Sqrt((float)(mateuszek.maxDamage - mateuszek.damage) / (float)mateuszek.maxDamage));
+		score = (int)((float)score * Mathf.Sqrt((float)((mateuszek.maxDamage+1) - mateuszek.damage) / (float)(mateuszek.maxDamage+1)));
 		Debug.Log (score);
 		for (int i = 0; i < 34; i++) {
 			score -= Mathf.Abs (faceStats [i] - objective [i]);

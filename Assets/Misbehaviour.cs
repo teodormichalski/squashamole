@@ -70,6 +70,11 @@ public class Misbehaviour : MonoBehaviour
     	if (scarsOn[2]) 
     	{
     		damage++;
+			if (damage > maxDamage) 
+			{
+				dead = true;
+				return;
+			}
     		LooseEar(leftEar);
     	} else {
     		ReceiveDamage(2);
@@ -79,7 +84,14 @@ public class Misbehaviour : MonoBehaviour
     void CutEarRight() {
     	if (scarsOn[3]) 
     	{
+			if (dead)
+				return;
     		damage++;
+			if (damage > maxDamage) 
+			{
+				dead = true;
+				return;
+			}
     		LooseEar(rightEar);
     	} else {
     		ReceiveDamage(3);
@@ -100,6 +112,8 @@ public class Misbehaviour : MonoBehaviour
 
     void ReceiveDamage(int newScarNumber)
     {
+		if (dead)
+			return;
     	damage++;
     	if (damage % 4 == 0)
     	{
