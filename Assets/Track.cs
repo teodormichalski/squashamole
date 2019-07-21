@@ -13,13 +13,13 @@ public class Track : MonoBehaviour
     Vector3 castpoint;
     Vector3 prevCastpoint = Vector3.zero;
 
-    public int cooldown;
-    private int cdnCounter;
-    public GameObject leftEar;
-    public GameObject rightEar;
-    public GameObject nose;
-    public GameObject neck;
-    public Misbehaviour receiver;
+	public float cooldown;
+	private float cdnCounter;
+	public GameObject leftEar;
+	public GameObject rightEar;
+	public GameObject nose;
+	public GameObject neck;
+	public Misbehaviour receiver;
 
     public static Vector3 ProjectPointOnLine(Vector3 linePoint, Vector3 lineVec, Vector3 point)
     {
@@ -160,45 +160,37 @@ public class Track : MonoBehaviour
             }
         }
 
-        Vector2 castpoint2D = new Vector2(castpoint.x, castpoint.y);
-        Vector2 step = new Vector2(((castpoint - prevCastpoint) / precision).x, ((castpoint - prevCastpoint) / precision).y);
-        if (cdnCounter >= cooldown)
-        {
-            for (int i = 0; i < precision; i++)
-            {
-                if (rightEar.GetComponent<CapsuleCollider2D>().OverlapPoint(castpoint2D + step * (i + 1)))
-                {
-                    receiver.cutRight = true;
-                    cdnCounter = 0;
-                    receiver.GetComponent<AudioSource>()?.Play();
-                    break;
-                }
-                if (leftEar.GetComponent<CapsuleCollider2D>().OverlapPoint(castpoint2D + step * (i + 1)))
-                {
-                    receiver.cutLeft = true;
-                    cdnCounter = 0;
-                    receiver.GetComponent<Quacker>()?.Cry();
-                    break;
-                }
-                if (nose.GetComponent<CapsuleCollider2D>().OverlapPoint(castpoint2D + step * (i + 1)))
-                {
-                    receiver.receive = true;
-                    cdnCounter = 0;
-                    receiver.GetComponent<Quacker>()?.Cry();
-                    break;
-                }
-                if (neck.GetComponent<BoxCollider2D>().OverlapPoint(castpoint2D + step * (i + 1)))
-                {
-                    receiver.receive = true;
-                    cdnCounter = 0;
-                    receiver.GetComponent<Quacker>()?.Cry();
-                    break;
-                }
-            }
-        }
-        else
-        {
-            cdnCounter++;
-        }
+		Vector2 castpoint2D = new Vector2 (castpoint.x, castpoint.y);
+		Vector2 step = new Vector2 (((castpoint - prevCastpoint) / precision).x, ((castpoint - prevCastpoint) / precision).y);
+		if (cdnCounter >= cooldown) {
+			for (int i = 0; i < precision; i++) {
+				if (rightEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.cutRight = true;
+					cdnCounter = 0f;
+					receiver.GetComponent<AudioSource> ().Play ();
+					break;
+				}
+				if (leftEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.cutLeft = true;
+					cdnCounter = 0f;
+					receiver.GetComponent<Quacker> ().Cry ();
+					break;
+				}
+				if (nose.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.receive = true;
+					cdnCounter = 0f;
+					receiver.GetComponent<Quacker> ().Cry ();
+					break;
+				}
+				if (neck.GetComponent<BoxCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
+					receiver.receive = true;
+					cdnCounter = 0f;
+					receiver.GetComponent<Quacker> ().Cry ();
+					break;
+				}
+			}
+		} else {
+			cdnCounter += Time.deltaTime;
+		}
     }
 }
