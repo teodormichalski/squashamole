@@ -41,14 +41,20 @@ public class ButtonBehaviour : MonoBehaviour
 		if (state == 1) lastTick -= 0.9f;
     }
 
-    void EndGame() {
+    void EndGame()
+    {
     	state = 0;
-  		//tu punktacja
+        GameManager.instance.EndGame();
+  		//TODO: Punktacja
+        
     }
 
     void Click() {
     	if (state == 0)
+        {
+            GameManager.instance.StartGame();
     		IncrementCountdown();
+        }
     }
 
 
