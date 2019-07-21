@@ -23,9 +23,15 @@ public class GameManager : MonoBehaviour
 	private GameObject finish;
 	public GameObject btnSprite;
 	public Sprite button;
+	public GameObject musicPlayer;
     // Start is called before the first frame update
     void Start()
     {
+		if (GameObject.Find ("MusicPlayer(Clone)") == null) {
+			GameObject tmp = Instantiate (musicPlayer, Vector3.zero, Quaternion.identity);
+			DontDestroyOnLoad (tmp);
+			tmp.GetComponent<AudioSource> ().Play ();
+		}
 		FaceGenerator.Randomize ();
 		modelHair = GameObject.Find ("ModelHair");
 		mateuszek = GameObject.Find ("Mateuszek").GetComponent<Misbehaviour>();
