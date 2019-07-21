@@ -11,66 +11,85 @@ public static class FaceGenerator
 
 	private static List<int[]> objectives = new List<int[]>();
 
+	private static List<GameObject> posters = new List<GameObject>();
+
+	private static GameObject poster;
+
 	public static void Randomize() {
 		Random.InitState((int)System.DateTime.Now.Ticks);
 		int[] values;
 		values = new int[34];
-		float p = 50;
         //Grzywka lewo
-        //for (int i = 0; i < 34; i++)
-        //{
-        //    values[i] = 3 + i;
-        //}
+        for (int i = 0; i < 34; i++)
+        {
+            values[i] = 3 + i;
+        }
+		objectives.Add (values);
+		poster = GameObject.Find ("goal 2");
+		poster.SetActive (false);
+		posters.Add (poster);
         //Grzywka prawo
-        //for (int i = 0; i < 34; i++)
-        //{
-        //    values[i] = 34 - i;
-        //}
+		values = new int[34];
+        for (int i = 0; i < 34; i++)
+        {
+            values[i] = 34 - i;
+        }
+		objectives.Add (values);
+		poster = GameObject.Find ("goal 6");
+		poster.SetActive (false);
+		posters.Add (poster);
         //Prawe pasemko dłuższe
-        //for (int i = 0; i < 34; i++)
-        //{
-        //    values[i] = 15;
-        //}
-        //for (int i = 0; i < 10; i++)
-        //{
-        //    values[i + 24] = 50 - i / 2;
-        //}
+		values = new int[34];
+        for (int i = 0; i < 34; i++)
+        {
+            values[i] = 15;
+        }
+       	for (int i = 0; i < 10; i++)
+        {
+            values[i + 24] = 50 - i / 2;
+        }
+		objectives.Add (values);
+		poster = GameObject.Find ("goal 8");
+		poster.SetActive (false);
+		posters.Add (poster);
         //Prosta Grzywka
-        //for (int i = 0; i < 17; i++) {
-        //    values[i] = 20 + i;
-        //}
-        //for (int i = 0; i < 17; i++)
-        //{
-        //    values[i + 17] = 35 - i;
-        //}
+		values = new int[34];
+        for (int i = 0; i < 17; i++) {
+            values[i] = 20 + i;
+        }
+        for (int i = 0; i < 17; i++)
+        {
+            values[i + 17] = 35 - i;
+        }
+		objectives.Add (values);
         //Grzywka okrągła
-        //for (int i = 0; i < 34; i++)
-        //{
-        //    values[i] = 10;
-        //}
-        //
+		values = new int[34];
+        for (int i = 0; i < 34; i++)
+        {
+            values[i] = 10;
+        }
+		objectives.Add (values);
+		poster = GameObject.Find ("goal 7");
+		poster.SetActive (false);
+		posters.Add (poster);
         //Lewo i prawo pasemko dłuższe
-        //for (int i = 0; i < 34; i++)
-        //{
-        //    values[i] = 50 + i / 2;
-        //}
-        //for (int i = 0; i < 17; i++)
-        //{
-        //    values[i + 13] = 15;
-        //}
-        //for (int i = 0; i < 10; i++)
-        //{
-        //    values[i + 24] = 60 - i / 2;
-        //}
-        //for (int i = 0; i < 34; i++)
-        //{
-        //    p = 50;
-        //    values[i] = (int)Mathf.Round(p);
-        //}
-        //      for (int i = 0; i < 10; i++) {
-        //	values [i+24] = 20 - i - 1;
-        //}
+		values = new int[34];
+        for (int i = 0; i < 34; i++)
+        {
+            values[i] = 50 + i / 2;
+        }
+        for (int i = 0; i < 17; i++)
+        {
+            values[i + 13] = 15;
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            values[i + 24] = 60 - i / 2;
+        }
         objectives.Add(values);
+		poster = GameObject.Find ("goal 4");
+		poster.SetActive (false);
+		posters.Add (poster);
 	}
 
 	public static int[] GenerateFace(int hairCount, int maxLength) {
@@ -94,6 +113,9 @@ public static class FaceGenerator
 	}
 
 	public static int[] GetRandomObjective() {
-		return objectives [Random.Range (0, objectives.Count)];
+		int choice = Random.Range (0, objectives.Count);
+		Debug.Log (choice);
+		posters [choice].SetActive (true);
+		return objectives [choice];
 	}
 }
