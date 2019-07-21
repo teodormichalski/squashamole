@@ -16,14 +16,61 @@ public static class FaceGenerator
 		int[] values;
 		values = new int[34];
 		float p = 50;
-		for (int i = 0; i < 24; i++) {
-			p -= 30 / 24;
-			values [i] = (int)Mathf.Round (p);
-		}
-		for (int i = 0; i < 10; i++) {
-			values [i+24] = 20 - i - 1;
-		}
-		objectives.Add(values);
+        //Grzywka lewo
+        //for (int i = 0; i < 34; i++)
+        //{
+        //    values[i] = 3 + i;
+        //}
+        //Grzywka prawo
+        //for (int i = 0; i < 34; i++)
+        //{
+        //    values[i] = 34 - i;
+        //}
+        //Prawe pasemko dłuższe
+        //for (int i = 0; i < 34; i++)
+        //{
+        //    values[i] = 15;
+        //}
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    values[i + 24] = 50 - i / 2;
+        //}
+        //Prosta Grzywka
+        //for (int i = 0; i < 17; i++) {
+        //    values[i] = 20 + i;
+        //}
+        //for (int i = 0; i < 17; i++)
+        //{
+        //    values[i + 17] = 35 - i;
+        //}
+        //Grzywka okrągła
+        //for (int i = 0; i < 34; i++)
+        //{
+        //    values[i] = 10;
+        //}
+        //
+        //Lewo i prawo pasemko dłuższe
+        //for (int i = 0; i < 34; i++)
+        //{
+        //    values[i] = 50 + i / 2;
+        //}
+        //for (int i = 0; i < 17; i++)
+        //{
+        //    values[i + 13] = 15;
+        //}
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    values[i + 24] = 60 - i / 2;
+        //}
+        //for (int i = 0; i < 34; i++)
+        //{
+        //    p = 50;
+        //    values[i] = (int)Mathf.Round(p);
+        //}
+        //      for (int i = 0; i < 10; i++) {
+        //	values [i+24] = 20 - i - 1;
+        //}
+        objectives.Add(values);
 	}
 
 	public static int[] GenerateFace(int hairCount, int maxLength) {
