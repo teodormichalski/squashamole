@@ -134,6 +134,13 @@ public class Track : MonoBehaviour
 			transform.position = castpoint;
                 
         }
+
+		if (prevCastpoint == Vector3.zero)
+			return;
+
+		if ((Application.platform == RuntimePlatform.Android) && (Input.touchCount <= 0))
+			return;
+
 		foreach (var hair in GameObject.FindGameObjectsWithTag("HairSegment"))
         {
 			Vector3 point = Track.ProjectPointOnLineSegment(prevCastpoint, castpoint, hair.transform.position);
@@ -150,21 +157,25 @@ public class Track : MonoBehaviour
 				if (rightEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.cutRight = true;
 					cdnCounter = 0;
+					receiver.GetComponent<AudioSource> ().Play ();
 					break;
 				}
 				if (leftEar.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.cutLeft = true;
 					cdnCounter = 0;
+					receiver.GetComponent<Quacker> ().Cry ();
 					break;
 				}
 				if (nose.GetComponent<CapsuleCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.receive = true;
 					cdnCounter = 0;
+					receiver.GetComponent<Quacker> ().Cry ();
 					break;
 				}
 				if (neck.GetComponent<BoxCollider2D> ().OverlapPoint (castpoint2D + step * (i + 1))) {
 					receiver.receive = true;
 					cdnCounter = 0;
+					receiver.GetComponent<Quacker> ().Cry ();
 					break;
 				}
 			}

@@ -52,7 +52,7 @@ public class Hair : MonoBehaviour {
 		}
 		if ((growCounter >= growThreeshold) && (length > 1) && (alive)) {
 			growCounter = 0;
-			//Grow ();
+			Grow ();
 		}
 	}
 
