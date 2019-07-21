@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 		FaceGenerator.Randomize ();
 		modelHair = GameObject.Find ("ModelHair");
 		mateuszek = GameObject.Find ("Mateuszek").GetComponent<Misbehaviour>();
+		StartGame ();
     }
 
 	void StartGame() {
@@ -47,9 +48,9 @@ public class GameManager : MonoBehaviour
 	}
 
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.Return)) {
+/*		if (Input.GetKeyDown (KeyCode.Return)) {
 			StartGame ();
-		}
+		}*/
 	}
 
 	int EvaluateScore(int[] faceStats, int[] objective) {

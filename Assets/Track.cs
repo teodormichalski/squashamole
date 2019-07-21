@@ -138,6 +138,9 @@ public class Track : MonoBehaviour
 		if (prevCastpoint == Vector3.zero)
 			return;
 
+		if ((Application.platform == RuntimePlatform.Android) && (Input.touchCount <= 0))
+			return;
+
 		foreach (var hair in GameObject.FindGameObjectsWithTag("HairSegment"))
         {
 			Vector3 point = Track.ProjectPointOnLineSegment(prevCastpoint, castpoint, hair.transform.position);
