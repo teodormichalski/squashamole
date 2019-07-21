@@ -21,6 +21,7 @@ public class Track : MonoBehaviour
 	public GameObject neck;
 	public Misbehaviour receiver;
 	private bool enabled;
+	private bool fix = false;
 
 	public void SetEnabled(bool state) {
 		enabled = state;
@@ -113,6 +114,7 @@ public class Track : MonoBehaviour
         neck = GameObject.Find("neck");
         nose = GameObject.Find("nose 2");
         receiver = GameObject.Find("Mateuszek").GetComponent<Misbehaviour>();
+		trail.enabled = false;
         cdnCounter = 0;
     }
 
@@ -121,8 +123,13 @@ public class Track : MonoBehaviour
         width = (float)Screen.width / 2.0f;
         height = (float)Screen.height / 2.0f;
     }
+
     void Update()
     {
+		if (!fix)
+			fix = true;
+		else
+			trail.enabled = true;
         if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.touchCount > 0)
