@@ -69,6 +69,9 @@ public class GameManager : MonoBehaviour
 		score = EvaluateScore (faceStats, objective);
 		scoreUI.text = score.ToString();
 		btnSprite.GetComponent<SpriteRenderer> ().sprite = button;
+		foreach (GameObject hair in GameObject.FindGameObjectsWithTag("HairParent")) {
+			hair.GetComponent<Hair> ().alive = false;
+		}
 	}
 
 	void Update() {
@@ -79,7 +82,7 @@ public class GameManager : MonoBehaviour
 
 	int EvaluateScore(int[] faceStats, int[] objective) {
 		int score = this.score;
-		score = (int)((float)score * Mathf.Sqrt((float)((mateuszek.maxDamage+1) - mateuszek.damage) / (float)(mateuszek.maxDamage+1)));
+		score = (int)((float)score * ((float)((mateuszek.maxDamage+1) - mateuszek.damage) / (float)(mateuszek.maxDamage+1)));
 		for (int i = 0; i < 34; i++) {
 			score -= Mathf.Abs (faceStats [i] - objective [i]);
 		}
