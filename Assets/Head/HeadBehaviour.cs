@@ -12,11 +12,12 @@ public class HeadBehaviour : MonoBehaviour
 	public float jumpPhase = 0f;
 	public float jumpCycle = 0f;
 	Transform parentTf;
+	public bool isMoving = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Random.InitState(42);
+		Random.InitState((int)System.DateTime.Now.Ticks);
         jumpOrigin = GetComponent<Transform>().parent.position;
         parentTf = GetComponent<Transform>().parent;
     }
@@ -27,9 +28,11 @@ public class HeadBehaviour : MonoBehaviour
     	//Rigidbody2D rb = GetComponent<Rigidbody2D>();
     	//float horizontal = Mathf.PerlinNoise(Time.frameCount * 0.01f, 0f) - 0.5f;
     	//rb.AddForce(Vector3.left * horizontal * 5f);
-    	RandomPivot();
-    	JumpyNeck();
-    	Sway();
+		RandomPivot ();
+		if (isMoving) {
+			JumpyNeck ();
+			Sway ();
+		}
 
 		//Vector3 pos = parentTf.position;
 		//parentTf.position = new Vector3(jumpOrigin.x + sin, pos.y, pos.z);

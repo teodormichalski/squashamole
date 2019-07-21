@@ -9,13 +9,15 @@ public static class FaceGenerator
 	private static float changeChance = 0.5f; 
 	private static int minLength = 30;
 
-	private static List<int[]> objectives = new List<int[]>();
+	private static List<int[]> objectives;
 
-	private static List<GameObject> posters = new List<GameObject>();
+	private static List<GameObject> posters;
 
 	private static GameObject poster;
 
 	public static void Randomize() {
+		objectives = new List<int[]> ();
+		posters = new List<GameObject>();
 		Random.InitState((int)System.DateTime.Now.Ticks);
 		int[] values;
 		values = new int[34];
@@ -117,6 +119,7 @@ public static class FaceGenerator
 
 	public static int[] GetRandomObjective() {
 		int choice = Random.Range (0, objectives.Count);
+		Debug.Log (choice);
 		posters [choice].SetActive (true);
 		return objectives [choice];
 	}

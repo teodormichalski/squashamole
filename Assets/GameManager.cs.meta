@@ -3,7 +3,13 @@ guid: e7133b721f4c0a3489e31036799bee5f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cursor: {instanceID: 0}
+  - mateuszek: {instanceID: 0}
+  - scoreUI: {instanceID: 0}
+  - head: {instanceID: 0}
+  - btnSprite: {instanceID: 0}
+  - button: {fileID: 21300000, guid: 412bf354f3482ee418ae71bb4ba0bba7, type: 3}
   executionOrder: 200
   icon: {instanceID: 0}
   userData: 

@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
 	public Misbehaviour mateuszek;
 	public int score;
 	public Text scoreUI;
+	public GameObject head;
+	private GameObject finish;
+	public GameObject btnSprite;
+	public Sprite button;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,10 @@ public class GameManager : MonoBehaviour
 		mateuszek = GameObject.Find ("Mateuszek").GetComponent<Misbehaviour>();
 		scoreUI = GameObject.Find ("Score").GetComponent<Text> ();
 		cursor = GameObject.Find ("Cursor");
+		head = GameObject.Find ("head");
+		finish = GameObject.Find ("Finish");
+		btnSprite = GameObject.Find ("Button").transform.GetChild(0).gameObject;
+		finish.SetActive (false);
 		cursor.GetComponent<Track> ().SetEnabled (false);
     }
 
@@ -48,16 +56,19 @@ public class GameManager : MonoBehaviour
 			}
 			index++;
 		}
+		head.GetComponent<HeadBehaviour> ().isMoving = true;
 		objective = FaceGenerator.GetRandomObjective ();
 		cursor.GetComponent<Track> ().SetEnabled (true);
 	}
 
 	public void EndGame()
     {
+		finish.SetActive (true);	
+		head.GetComponent<HeadBehaviour> ().isMoving = false;
 		cursor.GetComponent<Track> ().SetEnabled (false);
-		Debug.Log ("GAme end");
 		score = EvaluateScore (faceStats, objective);
 		scoreUI.text = score.ToString();
+		btnSprite.GetComponent<SpriteRenderer> ().sprite = button;
 	}
 
 	void Update() {
@@ -69,11 +80,9 @@ public class GameManager : MonoBehaviour
 	int EvaluateScore(int[] faceStats, int[] objective) {
 		int score = this.score;
 		score = (int)((float)score * Mathf.Sqrt((float)((mateuszek.maxDamage+1) - mateuszek.damage) / (float)(mateuszek.maxDamage+1)));
-		Debug.Log (score);
 		for (int i = 0; i < 34; i++) {
 			score -= Mathf.Abs (faceStats [i] - objective [i]);
 		}
-		Debug.Log (score);
 		return score;
 	}
 }

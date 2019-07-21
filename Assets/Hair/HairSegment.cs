@@ -35,7 +35,6 @@ public class HairSegment : MonoBehaviour
 		if (id < this.id) {
 			gameObject.transform.parent = bulb.transform;
 			hairBulb = bulb.GetComponent<Hair> ();
-			hairBulb.alive = false;
 		}
 		if (id == this.id + 1) {
 			hairBulb.RegisterNewEnding (this.gameObject);
