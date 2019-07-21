@@ -114,7 +114,6 @@ public static class FaceGenerator
 
 	public static int[] GetRandomObjective() {
 		int choice = Random.Range (0, objectives.Count);
-		Debug.Log (choice);
 		posters [choice].SetActive (true);
 		return objectives [choice];
 	}

@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
 		FaceGenerator.Randomize ();
 		modelHair = GameObject.Find ("ModelHair");
 		mateuszek = GameObject.Find ("Mateuszek").GetComponent<Misbehaviour>();
-		StartGame ();
     }
 
     private void Awake()
@@ -51,6 +50,7 @@ public class GameManager : MonoBehaviour
 	public void EndGame()
     {
 		cursor.SetActive (false);
+		Debug.Log ("GAme end");
 		score = EvaluateScore (faceStats, objective);
 	}
 
