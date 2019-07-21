@@ -38,6 +38,7 @@ public class ButtonBehaviour : MonoBehaviour
     void IncrementCountdown() {
 		lastTick = Time.time;
 		state++;
+		if (state == 1) lastTick -= 0.9f;
     }
 
     void EndGame() {
