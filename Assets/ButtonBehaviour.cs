@@ -50,6 +50,7 @@ public class ButtonBehaviour : MonoBehaviour
     }
 
     void Click() {
+        Debug.Log("Click");
     	if (state == 0)
         {
             GameManager.instance.StartGame();

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1055439335556705045}
   - component: {fileID: 7180270889948629426}
   - component: {fileID: -4428671682523171295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Segment
   m_TagString: HairSegment
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3126335077577123304}
   - component: {fileID: 3126335077577123306}
   - component: {fileID: 623034139218205567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hair Bulb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
