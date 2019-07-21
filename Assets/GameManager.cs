@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
 	public int maxLength;
 	public int hairCount;
 	public int gameLength;
@@ -24,7 +26,12 @@ public class GameManager : MonoBehaviour
 		StartGame ();
     }
 
-	void StartGame() {
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void StartGame() {
 		faceStats = FaceGenerator.GenerateFace (34, maxLength);
 		//faceStats = FaceGenerator.GetRandomObjective();
 		int index = 0;
@@ -38,11 +45,11 @@ public class GameManager : MonoBehaviour
 			index++;
 		}
 		objective = FaceGenerator.GetRandomObjective ();
-		Invoke ("EndGame", gameLength);
 		cursor.SetActive (true);
 	}
 
-	void EndGame() {
+	public void EndGame()
+    {
 		cursor.SetActive (false);
 		score = EvaluateScore (faceStats, objective);
 	}

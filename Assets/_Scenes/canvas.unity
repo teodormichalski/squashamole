@@ -1430,13 +1430,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLength: 50
-  hairCount: 0
-  gameLength: 0
+  hairCount: 34
+  gameLength: 15
   faceStats: 
   hairLenghts: 
   objective: 
   cursor: {fileID: 850653041}
-  mateuszek: {fileID: 1767423541}
+  mateuszek: {fileID: 0}
   score: 0
 --- !u!4 &762953543
 Transform:
@@ -2888,18 +2888,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1767423541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5233879741605409936, guid: ced47f515073a124c8724c2080a9216d,
-    type: 3}
-  m_PrefabInstance: {fileID: 749189385}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06153aa41d21a41b393818c97265675c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1785959269
 GameObject:
   m_ObjectHideFlags: 0
