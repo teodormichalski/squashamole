@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class ButtonBehaviour : MonoBehaviour
 	public int previousState;
 	public float lastTick;
 	public Button button;
+	private bool done = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,15 +48,17 @@ public class ButtonBehaviour : MonoBehaviour
     {
     	state = 0;
         GameManager.instance.EndGame();
-  		//TODO: Punktacja
-        
     }
 
     void Click() {
-        Debug.Log("Click");
     	if (state == 0)
         {
+			if (done) {
+				SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+				return;
+			}
             GameManager.instance.StartGame();
+			done = true;
     		IncrementCountdown();
         }
     }

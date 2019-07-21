@@ -62,6 +62,9 @@ public static class FaceGenerator
             values[i + 17] = 35 - i;
         }
 		objectives.Add (values);
+		poster = GameObject.Find ("goal 7");
+		poster.SetActive (false);
+		posters.Add (poster);
         //Grzywka okrągła
 		values = new int[34];
         for (int i = 0; i < 34; i++)
@@ -69,7 +72,7 @@ public static class FaceGenerator
             values[i] = 10;
         }
 		objectives.Add (values);
-		poster = GameObject.Find ("goal 7");
+		poster = GameObject.Find ("goal 1");
 		poster.SetActive (false);
 		posters.Add (poster);
         //Lewo i prawo pasemko dłuższe
