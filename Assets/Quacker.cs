@@ -7,13 +7,19 @@ public class Quacker : MonoBehaviour
 
 	public AudioClip[] cries;
 	private AudioSource audioSource;
+	private int prevCry = -1;
 
 	void Start() {
 		audioSource = gameObject.GetComponent<AudioSource> ();
 	}
 
 	public void Cry() {
-		audioSource.clip = cries [Random.Range (0, cries.Length)];
+		int cry;
+		do {
+			cry = Random.Range (0, cries.Length);
+		} while (cry == prevCry);
+		prevCry = cry;
+		audioSource.clip = cries [cry];
 		audioSource.Play ();
 	}
 }
