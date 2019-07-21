@@ -44,6 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c559aa044f0924c99d8573d646430a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutThreeshold: 0.1
+  precision: 15
+  cooldown: 0.3
+  leftEar: {fileID: 0}
+  rightEar: {fileID: 0}
+  nose: {fileID: 0}
+  neck: {fileID: 0}
+  receiver: {fileID: 0}
 --- !u!1 &6873904004819369402
 GameObject:
   m_ObjectHideFlags: 0
